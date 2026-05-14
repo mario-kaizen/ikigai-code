@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
+/* ============================================
+   ikigAI Code — Design System
+   @marario brand: Warm Cream + Ink Forest + Warm Brass
+   Display: Barlow Condensed | Body: DM Sans
+   ============================================ */
+
+@theme {
+  --color-forest: #141F1B;
+  --color-forest-deep: #0D1512;
+  --color-forest-light: #1B2E28;
+  --color-forest-muted: #243D35;
+  --color-cream: #F5F0E8;
+  --color-parchment: #EDE8DC;
+  --color-warm-white: #FAF7F2;
+  --color-brass: #BFA278;
+  --color-brass-dark: #9E8560;
+  --color-brass-light: #DDD0BC;
+  --color-sage: #7A9E8C;
+  --color-stone: #8C8778;
+  --color-rust: #C45B4A;
+  --color-moss: #5A9E6F;
+
+  --font-display: var(--font-barlow), sans-serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background: var(--color-warm-white);
+  color: var(--color-forest-muted);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+/* Refined link styles */
+a {
+  color: var(--color-brass-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--color-forest-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-brass);
+  color: var(--color-warm-white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brass-light);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brass);
+}
+
+/* Prose styling for MDX content */
+.prose-ikigai {
+  max-width: 70ch;
+}
+
+.prose-ikigai p {
+  margin: 1.25em 0;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--color-forest);
+}
+
+.prose-ikigai h2 {
+  font-size: 2.25rem;
+  margin: 3rem 0 1rem;
+  color: var(--color-forest-muted);
+}
+
+.prose-ikigai h3 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--color-forest-muted);
+}
+
+.prose-ikigai h4 {
+  font-size: 1.125rem;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--color-brass-dark);
+  letter-spacing: 0.02em;
+}
+
+.prose-ikigai ul, .prose-ikigai ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+
+.prose-ikigai li {
+  margin: 0.5em 0;
+  color: var(--color-forest);
+  line-height: 1.7;
+}
+
+.prose-ikigai strong {
+  color: var(--color-forest-muted);
+  font-weight: 600;
+}
+
+.prose-ikigai em {
+  color: var(--color-brass-dark);
+  font-style: italic;
+}
+
+.prose-ikigai blockquote {
+  border-left: 2px solid var(--color-brass);
+  padding-left: 1.5em;
+  margin: 2em 0;
+  font-style: italic;
+  color: var(--color-brass-dark);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.prose-ikigai code {
+  background: var(--color-parchment);
+  color: var(--color-forest-muted);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.prose-ikigai hr {
+  border: none;
+  border-top: 1px solid var(--color-brass-light);
+  margin: 3rem 0;
 }

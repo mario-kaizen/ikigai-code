@@ -6,7 +6,7 @@ export default function TheLoopPage() {
       <div className="text-[10px] uppercase tracking-[0.3em] text-brass-dark mb-4 font-medium">
         The Method
       </div>
-      <h1 className="font-display text-5xl md:text-7xl text-forest-muted leading-[0.95] mb-6">
+      <h1 className="font-display text-4xl sm:text-5xl md:text-7xl text-forest-muted leading-[0.95] mb-6">
         The ikigAI<br />feedback loop
       </h1>
       <p className="text-xl text-brass-dark italic mb-12">

@@ -96,15 +96,23 @@ a:hover {
 }
 
 .prose-ikigai h2 {
-  font-size: 2.25rem;
-  margin: 3rem 0 1rem;
+  font-size: 1.75rem;
+  margin: 2.5rem 0 1rem;
   color: var(--color-forest-muted);
 }
 
+@media (min-width: 768px) {
+  .prose-ikigai h2 { font-size: 2.25rem; margin: 3rem 0 1rem; }
+}
+
 .prose-ikigai h3 {
-  font-size: 1.5rem;
-  margin: 2.5rem 0 0.75rem;
+  font-size: 1.25rem;
+  margin: 2rem 0 0.75rem;
   color: var(--color-forest-muted);
+}
+
+@media (min-width: 768px) {
+  .prose-ikigai h3 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
 }
 
 .prose-ikigai h4 {

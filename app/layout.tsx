@@ -63,7 +63,7 @@ export default function RootLayout({
       className={`${barlow.variable} ${dmSans.variable} antialiased`}
     >
       <body className="bg-warm-white text-forest-muted">
-        <div className="flex min-h-screen">
+        <div className="flex flex-col md:flex-row min-h-screen">
           <Sidebar />
           <main className="flex-1 min-w-0">{children}</main>
         </div>

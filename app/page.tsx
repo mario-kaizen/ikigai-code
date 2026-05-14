@@ -9,29 +9,28 @@ export default function HomePage() {
         ikigAI Code | A Mario Paguio program
       </div>
 
-      <h1 className="font-display text-4xl md:text-7xl text-forest-muted leading-[0.95] mb-8">
-        Stop using AI<br />
-        as a tool.<br />
+      <h1 className="font-display text-3xl sm:text-5xl md:text-7xl text-forest-muted leading-[0.95] mb-8">
+        Stop using AI as a tool.<br />
         <span className="text-brass-dark">Start running it</span><br />
         as infrastructure.
       </h1>
 
-      <p className="text-xl text-forest leading-relaxed mb-10 max-w-3xl font-light">
+      <p className="text-base md:text-xl text-forest leading-relaxed mb-10 max-w-3xl font-light">
         Six modules. Six artifacts. One outcome: a working personal AI
         operating system that compounds every week, sounds like you, and
         survives every model upgrade.
       </p>
 
-      <div className="flex gap-4 mb-20">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-16 md:mb-20">
         <Link
           href="/modules/the-shift"
-          className="inline-flex items-center px-7 py-4 bg-forest-muted text-warm-white font-medium tracking-wide uppercase text-sm hover:bg-forest-light transition-colors"
+          className="inline-flex items-center justify-center px-6 sm:px-7 py-4 bg-forest-muted text-warm-white font-medium tracking-wide uppercase text-sm hover:bg-forest-light transition-colors"
         >
           Start with Module 01 →
         </Link>
         <Link
           href="/the-loop"
-          className="inline-flex items-center px-7 py-4 border border-brass-dark text-brass-dark font-medium tracking-wide uppercase text-sm hover:bg-brass/10 transition-colors"
+          className="inline-flex items-center justify-center px-6 sm:px-7 py-4 border border-brass-dark text-brass-dark font-medium tracking-wide uppercase text-sm hover:bg-brass/10 transition-colors"
         >
           See the Loop
         </Link>
@@ -44,7 +43,7 @@ export default function HomePage() {
         <div className="text-[10px] uppercase tracking-[0.25em] text-brass-dark mb-4 font-medium">
           The problem you came here with
         </div>
-        <div className="font-display text-3xl md:text-4xl text-forest-muted leading-[1.15] tracking-tight mb-8">
+        <div className="font-display text-2xl md:text-4xl text-forest-muted leading-[1.15] tracking-tight mb-8">
           You didn&apos;t come here because Claude doesn&apos;t work for you.
           You came here because deep down, you know you&apos;re using it wrong.
           And you can&apos;t quite name why.
@@ -71,7 +70,7 @@ export default function HomePage() {
 
       {/* Who this is for */}
       <section className="mb-20">
-        <h2 className="font-display text-4xl text-forest-muted mb-8">Who this is for</h2>
+        <h2 className="font-display text-3xl md:text-4xl text-forest-muted mb-8">Who this is for</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-sage mb-2 font-medium">
@@ -100,7 +99,7 @@ export default function HomePage() {
 
       {/* The promise — job to be done */}
       <section className="mb-20">
-        <h2 className="font-display text-4xl text-forest-muted mb-3">What you walk away with</h2>
+        <h2 className="font-display text-3xl md:text-4xl text-forest-muted mb-3">What you walk away with</h2>
         <p className="text-stone mb-10">
           Six artifacts. Each one does a specific job in your operating system.
         </p>
@@ -150,7 +149,7 @@ export default function HomePage() {
 
       {/* The Loop — actual diagram */}
       <section className="mb-20">
-        <h2 className="font-display text-4xl text-forest-muted mb-3">The Loop</h2>
+        <h2 className="font-display text-3xl md:text-4xl text-forest-muted mb-3">The Loop</h2>
         <p className="text-stone mb-6">
           The three-verb engine underneath every module. The spine of the method.
         </p>
@@ -183,7 +182,7 @@ export default function HomePage() {
 
       {/* The six modules — job to be done */}
       <section className="mb-20">
-        <h2 className="font-display text-4xl text-forest-muted mb-3">The six modules</h2>
+        <h2 className="font-display text-3xl md:text-4xl text-forest-muted mb-3">The six modules</h2>
         <p className="text-stone mb-10">
           Built in order. Each one does a specific job. Each one earns the next.
         </p>
@@ -219,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* A note from Mario */}
-      <section className="mb-20 bg-cream border border-brass-light p-10">
+      <section className="mb-20 bg-cream border border-brass-light p-6 md:p-10">
         <div className="text-[10px] uppercase tracking-[0.25em] text-brass-dark mb-4 font-medium">
           A note from Mario
         </div>
@@ -253,7 +252,7 @@ export default function HomePage() {
       <div className="text-center pb-10">
         <Link
           href="/modules/the-shift"
-          className="inline-flex items-center px-8 py-5 bg-forest-muted text-warm-white font-medium tracking-wide uppercase hover:bg-forest-light transition-colors"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 bg-forest-muted text-warm-white font-medium tracking-wide uppercase text-sm sm:text-base hover:bg-forest-light transition-colors"
         >
           Begin Module 01 | The Shift →
         </Link>

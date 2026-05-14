@@ -13,6 +13,7 @@ import { FrictionToRule } from "@/components/FrictionToRule";
 import { RuleBuilder } from "@/components/RuleBuilder";
 import { SourceOfTruthMap } from "@/components/SourceOfTruthMap";
 import { VoiceDNABuilder } from "@/components/VoiceDNABuilder";
+import { ModeBuilder } from "@/components/ModeBuilder";
 import { ModuleComplete } from "@/components/ModuleComplete";
 import { ModuleMeta } from "@/components/ModuleMeta";
 
@@ -32,6 +33,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     RuleBuilder,
     SourceOfTruthMap,
     VoiceDNABuilder,
+    ModeBuilder,
     ModuleComplete,
     ModuleMeta,
     ...components,

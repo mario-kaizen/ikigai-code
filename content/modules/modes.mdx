@@ -1,0 +1,221 @@
+<Hook>
+You don&apos;t use the same voice for a support email and a strategy doc. Why does your AI?
+
+By default, your AI runs in one personality across every job. The same wording warmth, the same level of formality, the same depth, the same opinion-vs-research posture, regardless of whether you&apos;re asking for a client reply or a critique of a business plan. One personality. Every job. One-size-fits-all.
+
+This module is where one personality becomes several. By the end you&apos;ll have at least one named mode your AI can invoke on demand — a specialised persona with its own rules, its own loaded context, and its own trigger.
+</Hook>
+
+<ModuleMeta
+  readTime="~ 22 minutes"
+  exerciseTime="~ 25 minutes"
+  artifact="Your first custom mode file"
+/>
+
+## Why this matters
+
+In Module 04 you encoded *your* voice. Singular. That voice is the base — the floor your AI never drops below. But your voice isn&apos;t monolithic. You already write differently to a client in crisis than to your team in a planning session, and differently again when you&apos;re thinking through a hard architectural problem alone.
+
+Modes are how the AI inherits those distinctions instead of flattening them.
+
+A mode is a named persona layered on top of your base voice. Same DNA underneath. Different rules, different loaded context, different trigger, different default behaviour. *Customer-service-mode AI* and *strategic-thinking-mode AI* both sound like you — but they sound like different *parts* of you, applied to different work.
+
+The shift: stop having one AI assistant. Start having a small team of specialised modes, each with a job description.
+
+Most operators stall here because the move feels like over-engineering. *&quot;I&apos;ll just keep telling it what I need each session.&quot;* That&apos;s the tool-grade workflow. Every session you re-explain the mode you want. Every session you re-edit because you forgot to specify. Every session resets.
+
+Infrastructure-grade modes are named, loaded, and invocable. *&quot;Switch to support-reply mode&quot;* or *&quot;run as Donna&quot;* or *&quot;I&apos;m talking to The Oracle&quot;* — one word, and the AI&apos;s entire operating personality shifts. The rules fire. The right voice file loads. The right behavioural ceiling applies. You stopped editing the AI live, and started directing it.
+
+## Anatomy of a mode
+
+A mode has five parts. Each part has one job. None are optional.
+
+- **Name.** One word. The handle you invoke. *Oracle. Donna. Support-reply. Strategy.* Short enough to say out loud, specific enough to mean exactly one thing.
+- **Purpose.** One sentence describing what this mode exists for. Concrete. *&quot;Reply to client support tickets in a calm, professional tone.&quot;* Not *&quot;Help with customer interactions.&quot;*
+- **Loaded context.** The files, references, and data sources that fire when this mode is active. Your voice DNA. Specific feedback rules. Maybe a reference doc. The list of *what context the AI sees* when this mode is on.
+- **Behavioural rules.** The rules layered on top of your base voice — the things this specific mode adds, restricts, or amplifies. *&quot;Never offer my time.&quot;* *&quot;Always lead with the gap not the cause.&quot;* *&quot;Match the reader&apos;s technical depth.&quot;*
+- **Trigger.** The condition that invokes the mode. Could be a phrase you say (*&quot;run support&quot;*), could be a context (every reply in the support inbox), could be a schedule (every morning at 7:30 for the daily brief).
+
+Five fields. One per concept. Together they make a mode invocable and consistent across sessions.
+
+## The walkthrough
+
+Fifth pass through Run · Catch · Lock. By now the rhythm should be familiar.
+
+<Step number="01" title="Name the work, not the persona">
+
+Don&apos;t start with *&quot;I want a strategy mode&quot;* or *&quot;I want a creative mode.&quot;* Those are personas in search of a job.
+
+Start with the work. What are the three to five types of work you do most often? Be concrete:
+
+- *Reply to client support messages*
+- *Draft social captions in my voice*
+- *Critique a business plan or proposal*
+- *Triage Monday morning across calendar, Slack, and inbox*
+- *Generate options when I&apos;m stuck on a decision*
+
+Each one is a candidate mode. The mode&apos;s name will fall out of the work — not the other way around.
+
+<Callout variant="truth">
+Most operators pick their first mode by what sounds impressive. *&quot;Strategist mode.&quot;* *&quot;Creative director mode.&quot;* These collapse the moment you try to use them, because the work isn&apos;t specific enough to encode rules around. Pick the boring one. *Support-reply mode.* High volume, easy to verify, fastest to feel the ROI on. Save the impressive-sounding ones for after you&apos;ve felt the pattern work.
+</Callout>
+
+</Step>
+
+<Step number="02" title="Write the five fields">
+
+Pick the highest-volume work-type from your list. Open the mode builder. Fill the five fields with the same discipline you brought to your memory rules.
+
+The fields most operators get wrong:
+
+- **Purpose**: too abstract. Bad: *&quot;Help with customer interactions.&quot;* Good: *&quot;Reply to client support tickets in a calm, professional tone, ending at the answer, with full location name in the opener.&quot;*
+- **Loaded context**: too thin. Bad: *&quot;My voice DNA.&quot;* Good: *&quot;voice-dna.md, feedback_no-jump-on-a-call.md, feedback_support-reply-voice.md, the latest client ticket data.&quot;*
+- **Trigger**: too vague. Bad: *&quot;When I&apos;m doing support.&quot;* Good: *&quot;When I say &apos;run support&apos; or work in the support inbox. Fires automatically on inbound tickets to support@.&quot;*
+
+<ModeBuilder />
+
+The downloaded file is named `mode_<slug>.md`. Save it where your AI loads memory from. Same lock pattern as every previous module.
+
+</Step>
+
+<Step number="03" title="Test the invocation">
+
+Open a fresh session with your AI. Invoke the mode by name. *&quot;Run as support-reply mode. Here&apos;s the inbound ticket.&quot;*
+
+Watch the response. Did the loaded context fire? Did the mode-specific rules apply? Did the AI sound like the *mode* — not the base voice, not the generic assistant, but the named, specialised mode you defined?
+
+If yes, the mode is real. Lock it in.
+
+If no, the most common failure is the AI isn&apos;t loading the mode file before responding. Same Module 02 lesson — the rule has to load before the response, not be referenced after. Check your `CLAUDE.md` (or whatever your tool&apos;s equivalent is) is pointing the mode file into the loaded context for the session.
+
+</Step>
+
+<Step number="04" title="Add modes one at a time">
+
+Resist the urge to build all five modes today.
+
+Live with the first one for a week. Catch its edge cases. Notice the moments it doesn&apos;t fire the way you wanted. Refine the rules. *Then* build the second one.
+
+Modes compound the way rules compound — slowly, against real friction, never from theory. A library of five modes that all fire reliably outperforms a library of fifteen that each work 60% of the time.
+
+<Callout variant="take">
+Modes are personas, not departments. You&apos;re not building an org chart. You&apos;re carving the work your AI does most often into named shapes so each shape can fire reliably. The fewer, the better. The narrower the purpose, the higher the consistency.
+</Callout>
+
+</Step>
+
+## Three real modes from my system
+
+Same pattern as previous modules. Three modes from my actual operating layer, copied without edit, each built against a specific need.
+
+### Mode one | The Oracle
+
+**Purpose.** System architect mode. When something is broken at the architecture level — the infrastructure, the deploy pipeline, the data layer, the AI&apos;s own operating system — I invoke The Oracle. Deep, evidence-led, no pumping up. Build it right the first time. No shortcuts.
+
+**Loaded context.** A specific set of feedback rules about deep technical work, the platform infrastructure documentation, the Lighthouse DB schema, the GHL internal API map, all my reverse-engineering notes. Heavy context for heavy work.
+
+**Mode rules.** Lead with evidence; retract immediately when wrong; show the working in plain order — context, evidence, analysis, conclusion; match Mario&apos;s depth; no narrating difficulty (never *&quot;this is a big build&quot;*); never suggest wrapping up. Speak when spoken to, or when something is broken — but when you do speak, go deep.
+
+**Trigger.** Explicit invocation: *&quot;Oracle&quot;* or *&quot;I have an architectural issue&quot;* or *&quot;get mum.&quot;* Also fires on any task that involves infrastructure, debug-the-system, or skill-building work.
+
+What this mode earns me: when I&apos;m doing infrastructure work, the AI doesn&apos;t flatten to its generic-assistant default. It runs at the depth the work requires. The shift happens by name.
+
+### Mode two | Donna (executive assistant)
+
+**Purpose.** Run the morning briefing across calendar, Slack, inbox, and Notion. Surface what matters before the day starts. Draft replies for approval before sending anything client-visible.
+
+**Loaded context.** Calendar API, Slack workspace routing rules, the Lighthouse client database, my Notion task DB, the team roster, all the *who is who* references. Donna doesn&apos;t need the infrastructure depth The Oracle needs; she needs the people and the operations.
+
+**Mode rules.** Warm conversational tone — not cold, not cheerleading. Cross-reference at least two sources before flagging any client issue. Always draft for approval before any client-facing send. Surface only load-bearing items in the morning brief — no padding.
+
+**Trigger.** Cron at 7:30am AEST for the daily brief. Also explicit: *&quot;Donna, check X&quot;* or *&quot;Donna, run the morning.&quot;*
+
+What this mode earns me: the operations layer of my business has a name and a shape. *Donna* is doing the morning sweep while I drink coffee. The mode collapses what used to be 30 minutes of context-switching into a 5-minute structured brief.
+
+### Mode three | Support-reply
+
+**Purpose.** Reply to client support tickets in a calm, professional tone. End at the answer. Never commit my time.
+
+**Loaded context.** The voice DNA, the specific feedback rules about support voice, the ticket detail, the client&apos;s recent history, the support reply templates.
+
+**Mode rules.** Never offer *&quot;happy to jump on a call&quot;* or any variant. Professional, not confident — confidence reads as arrogant in support replies. Full location name with region in the opener. Sign with first name only, no title. End at the ask. No appended commentary sections.
+
+**Trigger.** Any inbound support ticket. Also explicit: *&quot;draft a reply to this ticket.&quot;*
+
+What this mode earns me: the lowest-effort, highest-volume work of my business runs in a predictable shape every time. No surprises in tone. No accidental time commitments. No appended fluff. The mode does the discipline so I don&apos;t have to police every draft.
+
+Notice the shape across all three. Each mode has the same five fields. Each one is invocable by name. Each one is layered on top of the base voice, not replacing it.
+
+## Common mistakes
+
+1. **Building modes that overlap.** If two modes feel like they could handle the same request, you have one mode trying to be two. Narrow each one until it has exactly one job. Overlapping modes are how the system starts feeling fuzzy.
+2. **Naming modes by personality instead of purpose.** *&quot;Creative mode.&quot;* *&quot;Strategic mode.&quot;* Both vague. *&quot;Caption writer mode.&quot;* *&quot;Proposal critique mode.&quot;* Specific. The name should make the purpose obvious to someone reading it cold.
+3. **Adding a mode for work you do once a quarter.** Modes are for repeatable, high-volume work. If you only do it three times a year, write a saved prompt instead. Modes earn their slot through frequency.
+4. **Forgetting that modes inherit from the base voice.** Don&apos;t re-state your tone rules in every mode. The voice DNA from Module 04 is the floor. Each mode only adds, restricts, or amplifies on top — it doesn&apos;t replace.
+
+<Callout variant="take">
+A mode is the smallest unit of an organisational design system. Naming the work is the design move. Encoding the rules is the build. Invocation is the deployment. Most operators try to skip straight to deployment without doing the design — and then wonder why the modes don&apos;t fire reliably.
+</Callout>
+
+<ClaudeCodePath>
+
+Save each mode as its own file: `~/.claude/projects/<your-project>/memory/mode_<slug>.md`. The `mode_` prefix is the convention — it&apos;s how your AI distinguishes a mode definition from a memory rule or a reference doc.
+
+Frontmatter that travels well:
+
+```yaml
+---
+mode: support-reply
+description: One-sentence purpose.
+type: mode
+---
+```
+
+In your `CLAUDE.md`, add a section that lists available modes and how they fire:
+
+```markdown
+## Modes | Named personas for different work
+
+Available modes (load on invocation):
+- `mode_oracle.md` — system architect, deep infrastructure work
+- `mode_donna.md` — EA, morning brief, calendar + Slack + tasks
+- `mode_support-reply.md` — client support tickets, calm professional tone
+
+When I invoke a mode by name, load that mode file before responding and apply
+its rules on top of the base voice.
+```
+
+This pattern — one file per mode, listed in CLAUDE.md, invoked by name — is the mechanical foundation of an AI that runs as a small team of specialised personas instead of one generic assistant. The discipline is naming the work clearly. The mechanics are simple.
+
+</ClaudeCodePath>
+
+## The deeper game
+
+This module is about AI modes. But notice what we actually just did.
+
+We took the *one* generic AI persona that comes with every tool, and split it into a small team of specialists, each named, each invocable, each accountable to a specific job. The AI stopped being a person and became a department — small, specialised, and consistent.
+
+The pattern is universal. Every operator who builds a real team faces the same transition. In the early days you do every job yourself. You *are* the customer service, the strategy, the operations, the creative direction. As the business grows, the work gets named and assigned. Not because you can&apos;t do it anymore, but because the *consistency* of someone-specific-owning-each-shape is worth more than the flexibility of you-doing-everything.
+
+Most operators stall at this transition. They keep being every mode because being every mode feels like control. Until the cost of context-switching, the inconsistency of the output, and the bottleneck of you-as-the-only-router become impossible to ignore.
+
+AI is, again, the easiest place to see the move because the AI can&apos;t escape into &quot;I&apos;ll just do it myself.&quot; If you don&apos;t define modes, every job gets the same generic personality, and you feel the friction immediately. The forcing function builds the discipline.
+
+You just installed it for AI. The structure transfers — to the team you have, the team you&apos;re hiring, and the team you&apos;ll inherit.
+
+Fifth pass through the ikigAI feedback loop. You **ran** the work (listed the jobs that repeat). You **caught** the patterns (modes named, rules layered). You **locked** at least one mode (saved where the AI loads it, invocable by name). Run · Catch · Lock, fifth iteration.
+
+One module to go. The final layer is discipline — the cadence that keeps every layer underneath this one alive. Without it, all the work you&apos;ve done so far decays back to chaos within months. With it, the system sharpens every week instead of staling.
+
+<WalkOut>
+At least one named mode, saved as `mode_<slug>.md` in your memory directory, with all five fields filled. Tested in a fresh session — you&apos;ve invoked the mode by name and watched the right loaded context fire and the right rules apply.
+
+This is the fifth artifact in your operating system. The AI is no longer one personality. It&apos;s a small team of named specialists, each with a job.
+</WalkOut>
+
+<ModuleComplete
+  moduleNumber="5"
+  moduleTitle="custom mode"
+  nextSlug="discipline"
+  nextTitle="Discipline"
+/>

@@ -12,7 +12,7 @@ export function ModuleHeader({ module: m }: { module: Module }) {
           {m.diltsLevel} layer
         </span>
       </div>
-      <h1 className="font-display text-6xl md:text-7xl text-forest-muted leading-[0.95] mb-3">
+      <h1 className="font-display text-5xl md:text-7xl text-forest-muted leading-[0.95] mb-3">
         {m.title}
       </h1>
       <p className="text-xl text-brass-dark font-light italic">

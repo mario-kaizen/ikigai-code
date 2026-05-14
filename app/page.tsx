@@ -4,12 +4,12 @@ import { LoopDiagram } from "@/components/LoopDiagram";
 
 export default function HomePage() {
   return (
-    <div className="max-w-4xl px-12 py-20 mx-auto">
+    <div className="max-w-4xl px-6 md:px-12 py-14 md:py-20 mx-auto">
       <div className="text-[10px] uppercase tracking-[0.3em] text-brass-dark mb-6 font-medium">
         ikigAI Code | A Mario Paguio program
       </div>
 
-      <h1 className="font-display text-5xl md:text-7xl text-forest-muted leading-[0.95] mb-8">
+      <h1 className="font-display text-4xl md:text-7xl text-forest-muted leading-[0.95] mb-8">
         Stop using AI<br />
         as a tool.<br />
         <span className="text-brass-dark">Start running it</span><br />

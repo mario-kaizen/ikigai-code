@@ -36,7 +36,7 @@ export default async function ModulePage({ params }: { params: Params }) {
   const next = idx < modules.length - 1 ? modules[idx + 1] : null;
 
   return (
-    <article className="max-w-3xl px-12 py-16 mx-auto">
+    <article className="max-w-3xl px-6 md:px-12 py-12 md:py-16 mx-auto">
       <ModuleHeader module={m} />
 
       {Content ? (

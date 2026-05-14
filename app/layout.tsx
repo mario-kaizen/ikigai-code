@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://ikigaicode.mariopaguio.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://code.mariopaguio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { modules } from "@/lib/modules";
 
+export const dynamic = "force-static";
+
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://ikigaicode.mariopaguio.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://code.mariopaguio.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

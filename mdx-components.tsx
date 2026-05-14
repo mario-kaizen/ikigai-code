@@ -11,6 +11,7 @@ import { GapStatement } from "@/components/GapStatement";
 import { InteractiveGapStatement } from "@/components/InteractiveGapStatement";
 import { FrictionToRule } from "@/components/FrictionToRule";
 import { RuleBuilder } from "@/components/RuleBuilder";
+import { SourceOfTruthMap } from "@/components/SourceOfTruthMap";
 import { ModuleComplete } from "@/components/ModuleComplete";
 import { ModuleMeta } from "@/components/ModuleMeta";
 
@@ -28,6 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     InteractiveGapStatement,
     FrictionToRule,
     RuleBuilder,
+    SourceOfTruthMap,
     ModuleComplete,
     ModuleMeta,
     ...components,

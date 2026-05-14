@@ -1,0 +1,213 @@
+<Hook>
+Your AI just gave you a number that sounded exactly right and was completely fake.
+
+You didn&apos;t notice. Nobody noticed. The number went into a client report, a Slack reply, a board update. Three weeks later someone pulls the real data and the gap is humiliating.
+
+This is what happens when your AI doesn&apos;t know where to look. It pattern-matches a plausible answer instead of going to the source. The fix isn&apos;t a better prompt. The fix is a map.
+
+By the end of this module you&apos;ll have one — a written list of every place real data about your business lives, what your AI is allowed to trust, and where it&apos;s currently guessing.
+</Hook>
+
+<ModuleMeta
+  readTime="~ 25 minutes"
+  exerciseTime="~ 20 minutes"
+  artifact="Your source-of-truth map"
+/>
+
+## Why this matters
+
+A language model with no map of your business is doing one of two things at any moment.
+
+It&apos;s either pattern-matching prose that sounds plausible, or it&apos;s working from real data. There&apos;s no third option. *&quot;The AI is being smart about it&quot;* isn&apos;t real. *&quot;The AI is using its training data&quot;* is just a polite name for the first option.
+
+The difference between those two modes is the difference between a search engine and an oracle. One returns information that came from somewhere. The other emits text that *sounds like* information from somewhere. They feel identical on the page. They are not the same thing at all.
+
+In Module 02 you locked your friction layer — the rules that fire when something has already broken. This module locks the layer beneath the rules: where the truth lives.
+
+If your AI doesn&apos;t know where the truth lives, every rule on top of it is decorating a guess. You can encode a hundred rules about brand voice and a hundred more about formatting. None of them help when the underlying number was fabricated.
+
+The map is the work. The rules sit on top of the map.
+
+## Pattern matching vs. looking it up
+
+Notice the shape of this failure mode the next time you see it.
+
+You ask your AI a factual question about your business. *&quot;What was our cost per lead last week for the Edmonton account?&quot;* It produces a number. The number has the right shape — three digits, a dollar sign, a comma. It sounds like a real CPL.
+
+It was generated. It was not retrieved. Your AI does not have access to your ad account. Nobody told it where to look. It pattern-matched what a plausible CPL for a presale ad campaign looks like, and emitted that.
+
+This is not a model bug. This is a category error in how you set up the system. The model is doing exactly what models do when nothing has told them where to look — they look like they&apos;re looking, and they produce plausibility.
+
+The shift: stop asking your AI to *know* things about your business. Start telling it *where to look*, and let it retrieve.
+
+## The map
+
+A source-of-truth map is a written list of every place real data about your business lives. For each source, three pieces of information matter.
+
+- **What lives there.** One sentence. Client roster. Call transcripts. Ad metrics. Member attendance. Be concrete enough that the AI can decide whether this source is relevant to a given question.
+- **How the AI gets to it.** A connection string. A file path. A URL. An API endpoint. A read-only credential. The mechanical path from query to data. If you can&apos;t state this in one line, the AI can&apos;t reach it.
+- **What state the AI is in.** Three options: it has the path and uses it; it doesn&apos;t know this source exists; it pattern-matches without it. Each row of your map needs an honest answer.
+
+When you finish the map, you&apos;ll see the gaps. Some sources the AI already has — those rows are calm. Some sources are loud — the data is critical, the AI doesn&apos;t know it exists, and every question that touches it produces fabrication. The loud rows are the next work.
+
+The discipline is selectivity. Three to seven sources is the right size. Less than three usually means you haven&apos;t looked hard enough at where your data actually lives. More than seven usually means you&apos;re mapping noise instead of foundations.
+
+## The walkthrough
+
+Four steps. Run · Catch · Lock, third iteration.
+
+<Step number="01" title="List every source that matters">
+
+Stop and inventory. Spend 15 minutes writing down every place real data about your business currently lives. Don&apos;t organise yet. Just list.
+
+This includes:
+
+- The CRM (HubSpot, GHL, Salesforce, whatever you actually use)
+- The member or customer database
+- Spreadsheets that are load-bearing (you check them weekly)
+- Slack channels where decisions get made
+- Notion or Obsidian databases
+- Email folders or labels you treat as filing cabinets
+- The places in your own head that aren&apos;t written down anywhere yet
+- Whatever your equivalent of *&quot;the dashboard I screenshot every Monday&quot;* is
+
+<Callout variant="truth">
+The last category — *the places in your own head* — is the highest-leverage gap and the easiest to skip. If your team can&apos;t inherit it, your AI can&apos;t either. Write down the unwritten sources first. They are doing the most work and getting the least respect.
+</Callout>
+
+By the end, you&apos;ll have between 5 and 20 items. Most won&apos;t survive Step 02. That&apos;s the point.
+
+</Step>
+
+<Step number="02" title="Cut to the load-bearing 3 to 7">
+
+Look at the list. For each item ask one question: *if my AI could only access one of these and lost the rest, would the business still run?*
+
+Keep the ones where the answer is *yes, the business still runs*. Drop the rest. You&apos;re looking for the spine, not the skeleton.
+
+You should end up with three to seven sources. If you end up with more, you haven&apos;t been ruthless enough. If you end up with fewer than three, something&apos;s missing — most operators have at minimum a CRM, a member/customer database, and an analytics surface.
+
+</Step>
+
+<Step number="03" title="Fill the map">
+
+For each source, fill three fields. Source name. What lives there. AI access state. The map template handles the structure — you bring the honesty.
+
+The access state field is the one most people lie on. Be ruthless here too. *&quot;The AI has access to my CRM&quot;* is only true if your AI actually loads CRM data before answering CRM questions. If it has a connection string buried in a doc nobody references at runtime, it doesn&apos;t have access. It has the *possibility* of access. Those are different.
+
+<SourceOfTruthMap />
+
+The downloaded file is `source-of-truth-map.md`. Save it the same place you saved your memory rules from Module 02 — wherever your AI loads context before responding.
+
+</Step>
+
+<Step number="04" title="Wire the gaps">
+
+You now have a map with three states across each row. The next move is different for each.
+
+- **AI has the path** | nothing to do. The row is calm.
+- **AI doesn&apos;t know it exists** | write the connection string, file path, or API endpoint into the same place your AI loads memory from. The AI doesn&apos;t need full access today — it needs to *know the path exists* so it can ask for it or flag the gap honestly.
+- **AI pattern-matches without it** | this is the loud row. The fix is the same as the previous case (write the path into context), plus a memory rule from Module 02 that fires: *&quot;Before any answer about X, retrieve from Y. Never pattern-match.&quot;*
+
+You don&apos;t have to wire every gap today. Pick the loudest row — the one that&apos;s costing you most often — and close it this week. The map itself is the artifact. Wiring is the ongoing work that the map makes legible.
+
+</Step>
+
+## Three real sources from my map
+
+Same move as Module 02. These are three rows from my actual source-of-truth map, copied without edit, each born from a specific moment something broke.
+
+### Source one | Lighthouse DB (Postgres on a Coolify droplet)
+
+**What lives there.** My canonical client roster. Call transcripts ingested automatically from Read.ai. Action items extracted from those transcripts. Attendance and metrics rolled up from the locations I manage.
+
+**Why it&apos;s in the map.** Before this DB existed, my AI was guessing at client lists from outdated memory files. *&quot;Mario&apos;s active clients are…&quot;* followed by names that hadn&apos;t been clients in months. The DB exists so the question *who is currently a client* has exactly one answer and exactly one place to find it.
+
+**AI access state.** Has the path. The connection string and a description of the key tables are in my always-loaded `CLAUDE.md`. The AI queries the DB directly when a question is about client state.
+
+### Source two | The StrongLocation table
+
+**What lives there.** Credentials for every STRONG Pilates location: the Grow location ID, the Private Integration Token for the Grow API, the Hapana Core site ID. The wiring between the brand and every API call I make on a location&apos;s behalf.
+
+**Why it&apos;s in the map.** May 12, 2026. I migrated the Kelowna funnel to a new template. The deploy script pulled the PIT from the `Client` table in Lighthouse — which has STRONG location data, but for a different purpose, and the PITs there had drifted. The deploy shipped to production with the wrong PIT before I caught it. Live customer site, wrong credentials, real consequences.
+
+The lesson wasn&apos;t *check your PITs more carefully.* The lesson was: there are two tables that *look* like they answer the same question, and only one of them is canonical. Without the map, my AI couldn&apos;t tell. With the map, it knows the `Client` table is for one purpose and `StrongLocation` is the source of truth for credentials. Same database, different rows in the map.
+
+**AI access state.** Has the path. Locked as a hard rule in `CLAUDE.md` after the incident.
+
+### Source three | Slack workspace routing
+
+**What lives there.** Three Slack workspaces, each with its own audience and its own bot. *Kaizen Internal* is where my team coordinates *about* clients. *Kaizen Collective Hub* is where clients themselves participate. *STRONG x Kaizen* is a neutral comms space. Channel naming convention — `kc-*` for Internal, `strong-*` and bare client names for Hub — is the routing key.
+
+**Why it&apos;s in the map.** Multiple incidents in May 2026. The most painful: pulling `kc-strong-wellington-west` from Internal when Khaled&apos;s actual message was in `strong-wellington-west` from Hub. The two channels have similar names. They serve different audiences. They are not duplicates. Reading the wrong one means missing the client&apos;s actual message and acting on stale team chatter.
+
+**AI access state.** Has the path. The workspace mapping is in my always-loaded `CLAUDE.md` as a hard rule. Every Slack call now states the workspace explicitly in the response before the read happens.
+
+The mistake my AI keeps trying to make — and that the map keeps preventing — is treating *&quot;Slack&quot;* as one source. It is three sources that share a name. The map is the thing that knows the difference.
+
+## Common mistakes
+
+The three failures I see most often.
+
+1. **Mapping what should exist instead of what does exist.** Your map records the world as it is, not the world as it ought to be. If a critical data source isn&apos;t in the AI&apos;s context, that&apos;s an AI access state of *doesn&apos;t know it exists.* Don&apos;t pretty-up the map to feel productive. Honest gaps are how you find the work.
+2. **Confusing &quot;the AI could access it&quot; with &quot;the AI loads it.&quot;** A connection string in a doc the AI never reads at runtime is not access. Possibility is not access. Test it directly: ask your AI a question that requires that source and see whether it goes to the source or pattern-matches. If it pattern-matches, the path isn&apos;t wired.
+3. **Mapping noise instead of foundations.** Twelve spreadsheets that *might* have useful data is not a map. Three that the business actually runs on is. Mario&apos;s law: a map with three honest rows beats a map with thirty pretend ones, every time.
+
+<Callout variant="take">
+A complete map is not a map of every source. A complete map is a map of every source that, if removed, would change how your business runs. Everything else is noise the system has to learn to ignore.
+</Callout>
+
+<ClaudeCodePath>
+
+Save the map at `~/.claude/projects/<your-project>/memory/source-of-truth-map.md` so it loads with the rest of your memory directory.
+
+Reference it from your `CLAUDE.md` so the AI knows the map itself is the lookup table:
+
+```markdown
+## Source-of-Truth Map | Pointers only
+
+When the session needs current data, query the canonical source first:
+
+- **Clients (roster, metrics, channel IDs)** → Lighthouse DB
+  (`postgresql://...`). Connection string in `~/Projects/the-lighthouse/.env`.
+- **Ad accounts & Meta performance** → Meta Marketing API + GHL API.
+- **Call transcripts** → Lighthouse DB (`ReadAiMeeting.cleanTranscript`).
+- **Slack channel IDs** → `references/INDEX.md`.
+```
+
+The line above the list is the discipline: *pointers only, never cite data from memory.* That single instruction — combined with the actual map below it — turns *&quot;guess what the CPL was&quot;* into *&quot;look up the CPL in the right place or admit you don&apos;t have access yet.&quot;* The shift is from confident wrongness to honest retrieval.
+
+When a new data source enters your business — a new CRM, a new analytics surface, a new internal database — adding a row to this list is the first move. Before you build the integration. Before you write the rules on top. The map is the canvas everything else paints on.
+
+</ClaudeCodePath>
+
+## The deeper game
+
+This module is about AI access to data. But notice what we actually just did.
+
+We took the question *where does the truth live* and made it answerable. For every claim your business makes, there is now a single place that claim can be checked. The map is small. Three to seven entries. That&apos;s the point.
+
+The pattern is universal. Every operator who builds a real organisation eventually faces the same shift. In the early days, the truth lives in your head. You make decisions from intuition because you *are* the source. As the business grows, the truth moves into systems — databases, dashboards, CRMs — and the work of running the business becomes the work of knowing where to look.
+
+Most operators stall at this transition. They keep being the source because being the source feels productive. They&apos;re running a tool-grade workflow at the moment the business demands an infrastructure-grade map.
+
+AI is the easiest place to see this, because the AI has no head to put things in. If it doesn&apos;t have a map, it pattern-matches. Visibly. Repeatedly. The forcing function it creates is a gift: it makes you build the map you should have built for your team five years ago.
+
+You just installed it for AI. The map transfers.
+
+Third pass through the ikigAI feedback loop. You **ran** the work (inventoried your sources). You **caught** the patterns (the loud rows where AI fabricates). You **locked** the map (saved where the AI loads it). Run · Catch · Lock, third iteration. The method now runs across three layers — friction, rules, and the data underneath them.
+
+The next module gives the AI a voice. Not in the abstract sense — in the actual, concrete sense. We&apos;re going to take the writing samples and recorded patterns that sound unmistakably like you, and encode them so the AI sounds like your business by default, not like a generic assistant talking about it.
+
+<WalkOut>
+A source-of-truth map listing 3 to 7 of the data sources your business actually runs on, each with what lives there, the AI access state, and the next move. Saved where your AI loads memory. The loudest row — the one with the highest gap between *should know* and *currently fabricates* — has been wired this week.
+
+This is the third artifact in your operating system. The environment layer is now legible to your AI.
+</WalkOut>
+
+<ModuleComplete
+  moduleNumber="3"
+  moduleTitle="source-of-truth map"
+  nextSlug="identity"
+  nextTitle="Identity"
+/>

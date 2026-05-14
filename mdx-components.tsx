@@ -14,6 +14,7 @@ import { RuleBuilder } from "@/components/RuleBuilder";
 import { SourceOfTruthMap } from "@/components/SourceOfTruthMap";
 import { VoiceDNABuilder } from "@/components/VoiceDNABuilder";
 import { ModeBuilder } from "@/components/ModeBuilder";
+import { CompoundingPlan } from "@/components/CompoundingPlan";
 import { ModuleComplete } from "@/components/ModuleComplete";
 import { ModuleMeta } from "@/components/ModuleMeta";
 
@@ -34,6 +35,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     SourceOfTruthMap,
     VoiceDNABuilder,
     ModeBuilder,
+    CompoundingPlan,
     ModuleComplete,
     ModuleMeta,
     ...components,

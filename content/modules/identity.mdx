@@ -1,0 +1,197 @@
+<Hook>
+A draft just went out under your name. It was good enough to ship. It was not good enough to be yours.
+
+If you read it back tomorrow, you&apos;d wince at one of three things — a phrase you&apos;d never say, a structure you&apos;d never use, or a tone that landed *almost-but-not-quite* like a fluent stranger doing an impression of you. The receiver probably didn&apos;t notice. Over months, they will. The brand voice that took you a decade to refine in your own writing is leaking, one slightly-off draft at a time.
+
+This module is where the leak stops. By the end, your AI will have your voice as a loaded standard, not a target it&apos;s aiming at.
+</Hook>
+
+<ModuleMeta
+  readTime="~ 25 minutes"
+  exerciseTime="~ 30 minutes"
+  artifact="Your voice DNA file"
+/>
+
+## Why this matters
+
+In Module 02 you locked the rules that catch your AI when it breaks. In Module 03 you mapped where the truth lives. This module locks the thing that sits on top of both: the voice your AI speaks in.
+
+Voice isn&apos;t garnish. Voice is the entire surface area of your business. Every email, every Slack message, every ad, every reply, every welcome SMS. The voice is the brand contact point your customers actually feel. If your AI speaks in a generic-assistant voice and you ship anything it drafts, you&apos;re bleeding brand consistency in micro-doses on every output that goes out.
+
+Most operators try to fix this by tightening the prompt every time. *&quot;Write this in my voice. Sound conversational. Don&apos;t be salesy. Keep it short.&quot;* That works for one draft, partially, and then resets the next session. It&apos;s a tool-grade workflow. It&apos;s editing your AI live instead of building the voice into the operating layer.
+
+Infrastructure-grade voice is different. The AI loads your voice DNA before it speaks. The output you get is *closer* to your voice on the first draft than anything you could prompt for, every session, forever. Edits drop by 60 to 80 percent. The drafts stop feeling like a stranger&apos;s impression of you.
+
+The shift: stop telling your AI how to sound. Start telling it who it is when it&apos;s working for you.
+
+## Voice DNA, in four parts
+
+There are four things your AI needs to know about your voice. Not forty. Four.
+
+- **Tone north star.** One paragraph in plain English describing the dial. Where the AI is allowed to sit on the warm-to-blunt axis, on the conversational-to-formal axis. The exact line you don&apos;t want it to cross in either direction. The vibe a thoughtful friend would name if they read three of your emails in a row.
+- **Banned phrases and patterns.** The words and shapes that should *never* leave the AI&apos;s mouth while wearing your brand. Specific. Listed. *&quot;Great question.&quot;* *&quot;Brilliant.&quot;* *&quot;Happy to jump on a call.&quot;* Em-dash as a separator. Whatever your equivalents are.
+- **Required moves.** The signature patterns the AI *must* hit. The structural moves your writing always makes. *&quot;Pipe separator in titles.&quot;* *&quot;Acknowledgment before data.&quot;* *&quot;Show the working: context → evidence → analysis → conclusion.&quot;* These are the positive shape of your voice, not just the negative space.
+- **Sentence rhythm.** Two or three sentences from your actual writing, copied without edit. The AI pattern-matches *shape* far better than it follows instructions about shape. Showing it real sentences from real Mondays beats describing them ten different ways.
+
+Four fields. Together, they cover 80 percent of what makes a draft feel like yours. The remaining 20 percent is taste, and taste is what your edits are for — but the edits drop from 60% of a draft to 15%. That gap is the entire compounding effect of this module.
+
+## The walkthrough
+
+Run · Catch · Lock, fourth iteration. The work is in the catch step.
+
+<Step number="01" title="Pull your voice corpus">
+
+Spend 20 minutes pulling 10 pieces of writing that sound *unmistakably* like you. The bar is high — not *&quot;close enough,&quot;* not *&quot;I wrote it,&quot;* but *if a stranger read this, they would know it was me writing.*
+
+Sources:
+
+- Emails you&apos;ve sent that you felt good about
+- Slack messages where you said something the way you&apos;d want it said
+- Captions, posts, or articles you&apos;ve published
+- Voice memos you&apos;ve transcribed
+- DM replies you&apos;ve sent friends about work topics
+- Anything you&apos;ve written that someone said *&quot;this sounds so you&quot;* about
+
+Paste them all into one file. Name it `voice-corpus.md` or whatever — this isn&apos;t the artifact, it&apos;s the raw material. We&apos;re mining it next.
+
+<Callout variant="truth">
+The first time most operators do this, they realise how rarely they actually write in their own voice anymore. They edit, they approve, they ship — but the original drafts come from somewhere else. If your corpus is hard to fill, that&apos;s a signal worth feeling, not a problem to solve right now. Use what you have. Even five pieces is enough to start.
+</Callout>
+
+</Step>
+
+<Step number="02" title="Extract the banned list">
+
+Read the corpus straight through. Notice what&apos;s *not* there.
+
+You don&apos;t open emails with *&quot;Hope you&apos;re having a great week!&quot;* — that&apos;s a ban. You don&apos;t use *&quot;circle back.&quot;* You don&apos;t end with *&quot;happy to chat further.&quot;* You don&apos;t pile on three exclamation marks.
+
+Write down 5 to 15 specific phrases or patterns that appear nowhere in your real writing and that your AI keeps producing anyway. The bans are the AI&apos;s tells. The drafts that don&apos;t sound like you almost always contain one of these.
+
+Be ruthless about specificity. *&quot;Don&apos;t be salesy&quot;* is not a ban. *&quot;Never use &apos;unlock your potential&apos;&quot;* is. The AI can&apos;t enforce vibes. It can enforce strings.
+
+</Step>
+
+<Step number="03" title="Extract the required moves">
+
+Now look at what *is* there. The patterns that show up repeatedly. The structural choices your writing makes that a generic-voice draft wouldn&apos;t.
+
+Examples of what to look for:
+
+- *I always lead with the answer, then explain.* That&apos;s a required move.
+- *I structure replies as: acknowledge → data → next step.* Required move.
+- *I never use the word &quot;just&quot; as a softener.* That&apos;s a ban, but the inverse — *I make claims without softening* — is the positive required move.
+- *I use pipe separators in titles, not em-dashes.* Required move.
+
+Aim for 5 to 10 required moves. These are the spine of your voice. The bans are the surface; the required moves are the structure underneath.
+
+</Step>
+
+<Step number="04" title="Build the DNA file">
+
+Take the tone north star, the banned list, the required moves, and the sentence rhythm samples. Drop them into the template.
+
+<VoiceDNABuilder />
+
+Save the downloaded `voice-dna.md` where your AI loads memory from. Same rule as Modules 02 and 03 — if the AI doesn&apos;t load it before responding, it doesn&apos;t apply. Test by asking your AI to draft something in your voice in a fresh session. If the first draft already sounds 70 percent like you, the DNA is loading. If it sounds the same as before, the file is sitting somewhere the AI never reads.
+
+</Step>
+
+## Three real elements from my voice DNA
+
+Same pattern as Modules 02 and 03. These are three pieces of my actual voice DNA, copied without edit, each born from a specific failure.
+
+### Element one | Banned | &quot;Great question,&quot; &quot;amazing,&quot; &quot;brilliant&quot;
+
+**The pattern.** AI assistants love to start replies with sycophantic affirmation. *&quot;Great question!&quot;* *&quot;That&apos;s a brilliant point.&quot;* *&quot;Amazing — let me walk you through it.&quot;* It feels supportive. It is corrosive.
+
+**Why it&apos;s banned.** Cheerleading destroys trust at a chemical level for me. The moment a reply opens that way, I assume the rest is going to be empty calories — performance of helpfulness instead of helpfulness. If my AI talks to me that way, it&apos;ll talk to my clients that way, and they&apos;ll feel the same chemical recoil.
+
+**How it fires.** Self-audit before sending: does this reply open with affirmation about the prompt? Rewrite. Acknowledge the substance of what was asked, then deliver. *&quot;Understood — here&apos;s what the data shows&quot;* beats *&quot;Great question — here&apos;s what the data shows&quot;* every time, because it acknowledges the person without flattering them.
+
+### Element two | Required | Pipe separator in titles, never em-dash
+
+**The pattern.** Every title, heading, file name, and section label uses a pipe (`|`) as the separator between elements, never an em-dash (`—`).
+
+**Why it&apos;s required.** Em-dashes belong inside sentences as rhythm devices. When they&apos;re used as title separators, they pull stylistic weight a structural element shouldn&apos;t carry. The pipe is neutral, structural, and unmistakably mine. Anyone who reads more than two pages of my work absorbs it as a tell.
+
+**How it fires.** Before any output with a title or heading, scan for em-dashes used as separators. Rewrite as pipes. Inside-sentence em-dashes are fine — those are rhythm, not structure. The two uses are different and both my AI and I keep them clean.
+
+### Element three | Required | Acknowledgment before data
+
+**The pattern.** Every response acknowledges the person and the moment before delivering the data. One short sentence, conversational, not flattering.
+
+**Why it&apos;s required.** I run in two modes. Most of the time I&apos;m executing — and even then, the cold-data-first reply reads as a disappointed professor giving up on his student. In fire-drill mode (cost panic, breakage, overwhelm), the cold reply is actively destabilising. *Both* extremes fail. Blunt is not the opposite of cheerleading — warmth without flattery is.
+
+**How it fires.** Before any reply, especially in stress mode, the first sentence acknowledges the situation in plain language. *&quot;Yeah, that&apos;s rough — here&apos;s what I&apos;m seeing.&quot;* *&quot;Got you. Pulling the data now.&quot;* Acknowledge the person, then deliver the data. The acknowledgment is the warmth dial; banning cheerleading is the ceiling, not the floor.
+
+Notice the shape. The banned element is the surface. The required elements are the structure. The combination is what makes the voice mine instead of generic.
+
+## Common mistakes
+
+The three failures I see most often.
+
+1. **Describing the voice instead of showing it.** *&quot;Friendly but professional&quot;* is not voice DNA. *&quot;Conversational but direct&quot;* is not voice DNA. The AI cannot pattern-match adjectives — it can only pattern-match strings. Specific bans and specific required moves are the strings. Adjectives are the start of an essay, not the end of a voice file.
+2. **Pretending you have one voice when you have several.** You probably write to clients differently than you write to your team. Your sales voice is not your support voice. Your captions are not your emails. If you try to write *one* voice DNA file that covers everything, it collapses into vagueness. Pick the voice that produces the highest-volume drafts — usually support/email — and build for that one first. Module 05 is where you build the others as named modes.
+3. **Treating the corpus as the artifact.** The corpus is the raw material. The DNA file is the artifact. Don&apos;t skip the extraction step and drop a folder of old emails into your AI&apos;s context — that&apos;s pattern-matching surface noise instead of distilling the spine. The extraction is the work.
+
+<Callout variant="take">
+The fewer rules a voice DNA file has, the more reliably it fires. Five strong bans and five strong required moves outperform a hundred each. Discipline at this layer is the same as the rest of the program — encode what matters, ignore what doesn&apos;t.
+</Callout>
+
+<ClaudeCodePath>
+
+Save the voice DNA as `~/.claude/projects/<your-project>/memory/voice-dna.md` so it loads with the rest of your memory directory.
+
+Reference it from your `CLAUDE.md` so the AI loads it before every response:
+
+```markdown
+## Voice DNA | Always firing
+- Load `memory/voice-dna.md` before drafting any output.
+- Run the banned-list scan before sending. Any hit = rewrite.
+- Match the rhythm samples for length, cadence, and where the emphasis lands.
+```
+
+For more than one voice — say a customer-facing voice and an internal-team voice — name them and save them separately:
+
+```
+memory/voice-dna-customer.md
+memory/voice-dna-internal.md
+```
+
+Then point your modes (Module 05) at the right file. The DNA file is per-voice; the mode is what picks which voice fires.
+
+This is the layer where most operators stop, and where the highest single-module ROI lives. A 60-percent reduction in draft edits is the conservative payoff. The aggressive payoff is your team being able to ship in your voice without your edits — which is the thing that actually unlocks delegation.
+
+</ClaudeCodePath>
+
+## The deeper game
+
+This module is about AI voice. But notice what we actually just did.
+
+We took the thing every operator says they have — *&quot;I have a strong brand voice&quot;* — and turned it into a file. A real, written, loaded artifact. The voice that used to live exclusively in your head, that your team couldn&apos;t inherit and your AI couldn&apos;t reproduce, now sits in a file that loads before any draft.
+
+That move — externalising the voice from the head to the file — is the same move that lets you actually scale a team. The reason your delegation breaks down isn&apos;t that your people aren&apos;t talented. It&apos;s that the voice was never written down, so they were operating from impression instead of specification. The voice DNA file fixes that for AI. It also fixes it for the next hire you onboard.
+
+This is the unlock most operators wait too long to install. They keep being the voice because being the voice is the part they&apos;re proudest of. They&apos;re running a tool-grade workflow at a moment that demands an infrastructure-grade voice file.
+
+AI is the easiest place to see this, because the AI is the first &quot;hire&quot; that can&apos;t be onboarded through proximity. It needs the file or it produces a stranger&apos;s impression. The forcing function is, again, a gift.
+
+You just installed it for AI. The DNA transfers.
+
+Fourth pass through the ikigAI feedback loop. You **ran** the work (pulled the corpus). You **caught** the patterns (banned, required, rhythm). You **locked** the voice (saved where the AI loads it). Run · Catch · Lock, fourth iteration. The operating system now has friction rules, a source-of-truth map, *and* a voice.
+
+The next module is where the voice splits into modes. Customer-service-mode AI does not sound the same as strategic-thinking-mode AI. You&apos;re going to encode two or three different versions of your AI persona — each with its own job, its own rules, and its own trigger.
+
+<WalkOut>
+A voice DNA file with four parts — tone north star, banned phrases and patterns, required moves, and sentence rhythm samples. Built from a real corpus of your own writing, not from description. Saved where your AI loads memory. Tested at least once — a fresh session draft already sounds closer to your voice than before.
+
+This is the fourth artifact in your operating system. The identity layer is now legible to the AI.
+</WalkOut>
+
+<ModuleComplete
+  moduleNumber="4"
+  moduleTitle="voice DNA"
+  nextSlug="modes"
+  nextTitle="Modes"
+/>

@@ -1,0 +1,222 @@
+<Hook>
+You&apos;re about to make the same correction for the third time.
+
+You can feel it — the AI gave you a draft that&apos;s *almost* right, in exactly the way it&apos;s almost-right every week. You&apos;ll fix it. You&apos;ll close the session. And next Monday you&apos;ll fix it again.
+
+That correction is the most valuable signal in your entire AI workflow. And you&apos;re about to throw it away. By the end of this module you&apos;ll have three real corrections from your past week converted into binding rules your AI loads before it speaks. The same friction will never reach your eyes a fourth time.
+</Hook>
+
+<ModuleMeta
+  readTime="~ 25 minutes"
+  exerciseTime="~ 20 minutes"
+  artifact="Three signed memory rules"
+/>
+
+## Why this matters
+
+In Module 01 you named the category shift: tool to infrastructure.
+
+This module is where infrastructure starts being real.
+
+The thing that separates a tool-grade workflow from an infrastructure-grade one is what happens after a correction. In tool mode, you correct the output, you take the fix, you close the window. The correction was for *that* output. Job done.
+
+In infrastructure mode, the correction itself is the asset. The output it produced is a byproduct. You catch the correction, you encode it as a rule, and the AI fires that rule before responding for the rest of its life.
+
+Every time you correct your AI, one of two things is happening.
+
+You&apos;re treating it as a tool — and the lesson dies in the window. Same correction tomorrow.
+
+Or you&apos;re treating it as infrastructure — and the lesson becomes operating logic. Same correction never again.
+
+That&apos;s the gap.
+
+If you&apos;re correcting the same thing every week and not encoding it, you&apos;re not running an AI. You&apos;re running an editor on top of an AI. The editor&apos;s salary is your time, and that bill compounds in the wrong direction.
+
+## Memory as failure archaeology
+
+The frame matters. Memory isn&apos;t a brain dump, a knowledge base, or a generic context document. Those frames produce bloated, well-intentioned files no system ever reads.
+
+Memory is **failure archaeology**.
+
+<FrictionToRule />
+
+Every rule in your memory layer has a fossil underneath it — a specific moment something went wrong, and you decided it wasn&apos;t allowed to go wrong like that again. The fossil is the why. Without the why, the rule rots into a sticky note nobody reads.
+
+The shape of a real rule looks like this. Three parts. None optional.
+
+- **Rule** | one sentence, imperative voice. *Never write X. Always do Y.* No softening, no hedging.
+- **Why** | the actual moment this went wrong. Specific email, specific draft, specific incident. Date it.
+- **When it fires** | the trigger condition that should make the AI check this rule before responding.
+
+The rule without the why is a guess. The rule without the trigger is decoration. The rule without the incident is theory. All three together, and your AI starts running a system instead of pattern-matching prose.
+
+## The walkthrough
+
+Four steps. Same shape as Module 01: Run · Catch · Lock.
+
+<Step number="01" title="Catch three corrections this week">
+
+For the next seven days, every time your AI produces an output you have to correct before shipping it, write down the correction. One line. No structure yet. Just catch the raw moment.
+
+Examples of what catches look like:
+
+- *Claude wrote &quot;happy to jump on a call&quot; in a client email. I deleted it.*
+- *The Slack message used em-dashes everywhere. I rewrote them as commas.*
+- *The summary started with &quot;great question&quot; — I cut it.*
+- *The day-of-week was wrong in a scheduling email — I corrected Tuesday to Wednesday.*
+
+<Callout variant="truth">
+Most people skip this step because each correction feels too small. *&quot;It&apos;s just one tiny edit — I&apos;ll remember.&quot;* You won&apos;t. By Friday you&apos;ll have made fifteen of these edits and remembered exactly zero. The catch IS the work. The rules write themselves once the catches exist.
+</Callout>
+
+By the end of the week you&apos;ll have 5 to 15 lines. That&apos;s the raw fossil layer.
+
+</Step>
+
+<Step number="02" title="Pick the three that fire most often">
+
+Look at your list. Some corrections are one-offs. Some are the same shape three different times. The repeat-offenders are your first rules.
+
+Pick three. Not the most interesting three. The three that show up most often. Frequency is the signal — high-frequency friction is what your rule layer earns its keep against.
+
+</Step>
+
+<Step number="03" title="Write each one as a rule">
+
+For each of the three, fill in the four fields. Name. Rule. Why. Trigger.
+
+The template on the left is yours. The example on the right is pulled directly from my actual rule library — one of the rules that loads in my system every session.
+
+<RuleBuilder />
+
+The downloaded file is named `feedback_<your-slug>.md` because that&apos;s the convention my AI looks for. The `feedback_` prefix is how the system knows this file is a binding rule, not a reference doc or a project note. Adopt the same convention if you want the rest of the program&apos;s patterns to fit together.
+
+</Step>
+
+<Step number="04" title="Save where your AI actually loads it">
+
+This is where most people lose the module. They write rules. They save them somewhere reasonable. The AI never reads them. The rules don&apos;t fire. The correction happens again next Monday and they conclude the system doesn&apos;t work.
+
+The system works. The save location is wrong.
+
+Wherever you save the rule, your AI has to load it *before* every response. Not when explicitly asked. Not when context is mentioned. *Before every response.* That&apos;s the whole shift.
+
+Concretely:
+
+- **Claude Code** | `~/.claude/CLAUDE.md` is always loaded. Add your memory files to a directory and reference it from CLAUDE.md so it loads on every session.
+- **Claude.ai with Projects** | the Project Instructions field. Paste rule contents directly, or reference a shared file the project loads.
+- **ChatGPT** | Custom Instructions, or the Memory feature for shorter rules.
+- **Custom tool / API** | your system prompt. The memory directory contents should be concatenated into the system prompt on every call.
+
+If you don&apos;t know the answer for your tool, that&apos;s the first thing to find out before you trust any rule you&apos;ve written to actually fire. The save location decision is more important than the rule&apos;s wording — the best-written rule in an unread file is theatre.
+
+<Callout variant="take">
+The save location decision *is* the difference between memory and theatre. A rule the AI never loads is not a rule. It&apos;s a journal entry about a rule.
+</Callout>
+
+</Step>
+
+## Three real rules from my system
+
+These are not hypothetical. These are three rules from my actual memory layer, copied without edit. Each one was born the moment something specific broke, and locked the same day so it couldn&apos;t break the same way again.
+
+### Rule one | Never fabricate personal experience
+
+**Rule.** Never claim personal use, ownership, or lived experience with any product, app, or service. No *&quot;I use X all the time.&quot;* No *&quot;in my experience.&quot;* No first-person testimonial.
+
+**Why.** April 9, 2026. I asked Claude about Jump Desktop for mirroring a Mac Mini to iPad. Claude wrote: *&quot;I run Jump Desktop on my iPad to control servers all the time — it&apos;s genuinely the best remote desktop app on iPadOS and has been for a decade.&quot;* It also asserted &quot;$35 one-time&quot; as a price, without verification. Pure fabrication. Two of them stacked in one response. Trust gone on the entire reply.
+
+**When it fires.** Before any response that recommends a product. Self-audit: scan for *I use*, *I run*, *I&apos;ve tried*, *in my experience*, *daily driver*. Any hit means rewrite.
+
+What this rule earns me: my AI now talks about products without inventing testimonials, which means I can actually trust its recommendations. The cost was one ugly moment. The payoff is permanent.
+
+### Rule two | Always GET before PUT
+
+**Rule.** Before any save or write to an external system, read the current state from the source first. Never write from a cached payload.
+
+**Why.** May 5, 2026. While I was editing a client email in the GHL builder, Claude was working in parallel and decided to re-save the same email from a payload it had read five minutes earlier. My edits were overwritten. I had to restore from version history.
+
+**When it fires.** Before any PUT or PATCH or POST to GHL, HubSpot, Meta, or any external system that modifies a resource that already exists. The fresh GET is non-negotiable.
+
+What this rule earns me: my AI no longer steamrolls work I&apos;m doing in parallel. The cost was one restore-from-history. The payoff is every parallel-edit session that&apos;s happened since.
+
+### Rule three | Never offer my time in support replies
+
+**Rule.** Never end a client email or support reply with *&quot;happy to jump on a call,&quot;* *&quot;let me know if you want to chat,&quot;* or any variant that commits my calendar.
+
+**Why.** Multiple incidents. The most painful: an escalation reply on WhatsApp closed with *&quot;I can walk you through it on a quick call.&quot;* The client took me up on it. The call was time I hadn&apos;t agreed to, on a day I had no capacity, about a topic the email had already answered in writing.
+
+**When it fires.** Before any support email, escalation reply, or client message draft. Self-audit: is there a call offer at the end? Delete it. The detail in the message IS the offer. End at the ask or the sign-off.
+
+What this rule earns me: client replies that respect my calendar without me having to police every draft. The cost was a handful of unwanted calls. The payoff is the calendar discipline of someone who actually owns their time.
+
+Notice what&apos;s the same across all three. The rule didn&apos;t come from a productivity book. It came from a specific moment something broke. The catch is the source.
+
+## Common mistakes
+
+Don&apos;t make these. They&apos;re how most people&apos;s memory layers die.
+
+1. **Writing rules without the why.** A rule with no incident underneath it doesn&apos;t survive. You&apos;ll question it three months later, soften it, and watch it die. The incident is the rule&apos;s spine.
+2. **Saving rules where the AI can&apos;t see them.** A `rules.md` in a Notion doc the AI never loads is theatre. Test this directly: ask the AI to recite the rule before any session you expect it to apply.
+3. **Trying to encode every correction.** You don&apos;t need to. Rules are for repeat-offender friction, not one-offs. Three real rules beat thirty pretend ones. If you can&apos;t remember the incident that produced the rule a week later, the rule didn&apos;t earn its slot.
+4. **Pre-writing rules from theory.** *&quot;I should probably tell it not to use jargon.&quot;* Maybe. Has jargon actually shown up and caused a problem? If no, you&apos;re guessing. Pre-emptive rules without fossils underneath rot fastest of all.
+
+<Callout variant="take">
+The fewer rules you have that actually fire, the more powerful your memory layer is. Discipline is the absence of noise, not the presence of structure.
+</Callout>
+
+<ClaudeCodePath>
+
+Save each rule as its own file, one rule per file. Naming convention: `feedback_<short-slug>.md`. Store them under `~/.claude/projects/<your-project>/memory/` or a similar directory referenced from your `CLAUDE.md`.
+
+Frontmatter pattern that travels well:
+
+```yaml
+---
+name: One-line rule name
+description: One sentence that explains what the rule enforces.
+type: feedback
+tags: [hard-rule, voice]
+---
+```
+
+In your `CLAUDE.md`, point to the directory so the files load on every session:
+
+```markdown
+## Feedback rules — always firing
+- Pull all `feedback_*.md` from the memory directory before every response.
+- Cite the rule by filename when applying it.
+```
+
+That single pattern — one file per rule, loaded by default, cited when applied — is the entire mechanical foundation of an infrastructure-grade memory layer. The discipline is in the writing. The mechanics are this simple.
+
+</ClaudeCodePath>
+
+## The deeper game
+
+This module is about AI memory. But notice what we actually just did.
+
+We took the moments your work breaks, made them visible, encoded them as binding logic, and let the system fire the encoding next time. Friction became leverage.
+
+That isn&apos;t an AI move. It&apos;s the same move that runs every system that compounds — every SOP that earns its keep, every checklist a surgeon uses, every guard rail an airline puts on top of a pilot. The pattern is universal. AI is just the easiest place to see it, because the friction is right in front of you every day.
+
+The operators who pull away from their peers in the next decade aren&apos;t going to be the ones with the best prompts. They&apos;re going to be the ones who treat every correction they make as the seed of a rule that fires forever. That posture compounds across hiring, content, sales, and operations the same way it compounds across AI output.
+
+You just installed it for AI. The lens transfers.
+
+What you also just did — without me naming it — was a second pass through the ikigAI feedback loop. You **ran** the work (made corrections this week). You **caught** the patterns (the three repeat offenders). You **locked** them (rules saved where the AI loads them). Run · Catch · Lock, second iteration. The method is real now.
+
+The next module is where the AI starts knowing where to look. We&apos;re going to map every source of truth your business runs on — so the AI stops guessing at plausible-sounding answers and starts working from your real data.
+
+<WalkOut>
+Three signed memory rules, each with a real incident underneath, each saved where your AI loads it before responding. Tested at least once — you&apos;ve asked your AI to apply one of them in a fresh session and watched it fire.
+
+This is the second artifact in your operating system. The friction layer below your AI just became a learning layer.
+</WalkOut>
+
+<ModuleComplete
+  moduleNumber="2"
+  moduleTitle="memory rules"
+  nextSlug="source-of-truth"
+  nextTitle="Source of Truth"
+/>
